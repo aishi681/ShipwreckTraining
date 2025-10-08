@@ -32,10 +32,10 @@ public class Bucket {
          *
          * @param robotContext contains references like telemetry, gamepads, and subsystems
          */
-        public MoveBucketTask(RobotContext robotContext, double targetposition, double estimatedTimeTaken) {
+        public MoveBucketTask(RobotContext robotContext, double targetPosition) {
             super(robotContext);
-            TARGET_POSITION = targetposition;
-            this.estimatedTimeTaken = estimatedTimeTaken;
+            TARGET_POSITION = targetPosition;
+            this.estimatedTimeTaken = 5.0;
         }
 
         @Override
