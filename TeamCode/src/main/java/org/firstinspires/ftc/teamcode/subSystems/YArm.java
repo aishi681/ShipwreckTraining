@@ -12,12 +12,12 @@ public class YArm {
     private final PIDController SLIDE_PID = new PIDController(0.015, 0, 0.003);
     private double targetPosition = 0.0;
 
-    public static double SHOULDER_INTAKING_POSITION = 0.0;
-    public static double SHOULDER_OUTTAKING_POSITION = 1000.0;
+    public static double SLIDE_INTAKING_POSITION = 0.0;
+    public static double SLIDE_OUTTAKING_POSITION = 1000.0;
 
     public YArm(HardwareMap hardwareMap) {
 
-        SLIDE_MOTOR = new Motor(hardwareMap, "shoulderMotor");
+        SLIDE_MOTOR = new Motor(hardwareMap, "slideMotor");
 
         SLIDE_MOTOR.setRunMode(Motor.RunMode.RawPower);
 
