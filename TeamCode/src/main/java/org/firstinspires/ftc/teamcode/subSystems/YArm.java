@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode;
+package org.firstinspires.ftc.teamcode.subSystems;
 
 import com.arcrobotics.ftclib.controller.PIDController;
 import com.arcrobotics.ftclib.hardware.motors.Motor;
@@ -6,7 +6,7 @@ import com.jumpypants.murphy.RobotContext;
 import com.jumpypants.murphy.tasks.Task;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 
-public class Yarm {
+public class YArm {
     private final Motor SHOULDER_MOTOR;
 
     private final PIDController SHOULDER_PID = new PIDController(0.015, 0, 0.003);
@@ -15,7 +15,7 @@ public class Yarm {
     public static double SHOULDER_INTAKING_POSITION = 0.0;
     public static double SHOULDER_OUTTAKING_POSITION = 1000.0;
 
-    public Yarm(HardwareMap hardwareMap) {
+    public YArm(HardwareMap hardwareMap) {
 
         SHOULDER_MOTOR = new Motor(hardwareMap, "shoulderMotor");
 
@@ -26,8 +26,7 @@ public class Yarm {
         SHOULDER_MOTOR.resetEncoder();
     }
 
-    // To be called periodically in the main OpMode loop
-    public void updateD() {
+    public void updatePID() {
         double currentPosition = SHOULDER_MOTOR.getCurrentPosition();
 
         double pidOutput = SHOULDER_PID.calculate(currentPosition, targetPosition);
