@@ -46,13 +46,13 @@ public class YArm {
             TARGETPOSITION = targetPosition;
         }
 
-        public void setShoulderTarget(double targetTicks) {
+        public void setSlideTarget(double targetTicks) {
             SLIDE_PID.setSetPoint(targetTicks);
         }
 
         @Override
         protected void initialize(RobotContext robotContext) {
-            setShoulderTarget(TARGETPOSITION);
+            setSlideTarget(TARGETPOSITION);
         }
 
         @Override
