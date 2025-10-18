@@ -14,10 +14,7 @@ public class Intake {
     private final Servo intakeLeftServo;
     private final Servo intakeRightServo;
 
-    public static final double INTAKE_RIGHT_OPEN_POSITION = 0.0;
-    public static final double INTAKE_LEFT_CLOSE_POSITION = 0.7;
-    public static final double WRIST_UP_POSITION = 0.1;
-    public static final double WRIST_DOWN_POSITION = 1.0;
+
 
 
     public Intake(HardwareMap hardwareMap) {
