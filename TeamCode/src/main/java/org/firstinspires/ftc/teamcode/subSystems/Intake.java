@@ -16,7 +16,6 @@ public class Intake {
 
 
 
-
     public Intake(HardwareMap hardwareMap) {
         intakeLeftServo = hardwareMap.get(Servo.class, "intakeLeftServo");
         intakeRightServo = hardwareMap.get(Servo.class, "intakeRightServo");
