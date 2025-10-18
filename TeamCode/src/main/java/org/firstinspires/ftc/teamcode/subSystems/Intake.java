@@ -9,7 +9,7 @@ import org.firstinspires.ftc.teamcode.MyRobot;
 
 //import org.firstinspires.ftc.teamcode.MyRobot;
 
-public class Wrist {
+public class Intake {
 
     private final Servo intakeLeftServo;
     private final Servo intakeRightServo;
@@ -20,7 +20,7 @@ public class Wrist {
     public static final double WRIST_DOWN_POSITION = 1.0;
 
 
-    public Wrist(HardwareMap hardwareMap) {
+    public Intake(HardwareMap hardwareMap) {
         intakeLeftServo = hardwareMap.get(Servo.class, "intakeLeftServo");
         intakeRightServo = hardwareMap.get(Servo.class, "intakeRightServo");
     }
