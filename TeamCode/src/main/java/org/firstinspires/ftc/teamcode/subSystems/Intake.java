@@ -2,23 +2,21 @@ package org.firstinspires.ftc.teamcode.subSystems;
 
 import com.jumpypants.murphy.RobotContext;
 import com.jumpypants.murphy.tasks.Task;
+import com.qualcomm.robotcore.hardware.CRServo;
 import com.qualcomm.robotcore.hardware.Gamepad;
 import com.qualcomm.robotcore.hardware.HardwareMap;
-import com.qualcomm.robotcore.hardware.Servo;
 import org.firstinspires.ftc.teamcode.MyRobot;
-
-//import org.firstinspires.ftc.teamcode.MyRobot;
 
 public class Intake {
 
-    private final Servo intakeLeftServo;
-    private final Servo intakeRightServo;
+    private final CRServo intakeLeftServo;
+    private final CRServo intakeRightServo;
 
 
 
     public Intake(HardwareMap hardwareMap) {
-        intakeLeftServo = hardwareMap.get(Servo.class, "intakeLeftServo");
-        intakeRightServo = hardwareMap.get(Servo.class, "intakeRightServo");
+        intakeLeftServo = hardwareMap.get(CRServo.class, "intakeLeftServo");
+        intakeRightServo = hardwareMap.get(CRServo.class, "intakeRightServo");
     }
 
     public class RunIntakeTask extends Task {
@@ -45,11 +43,11 @@ public class Intake {
                 isServoOn = !isServoOn;
 
                 if (isServoOn) {
-                    intakeLeftServo.setDirection(Servo.Direction.FORWARD);
-                    intakeRightServo.setDirection(Servo.Direction.REVERSE);
+                    intakeLeftServo.setPower(1.0);
+                    intakeRightServo.setPower(1.0);
                 } else {
-                    intakeLeftServo.setPosition(0.0);
-                    intakeRightServo.setPosition(0.0);
+                    intakeLeftServo.setPower(0.5);
+                    intakeRightServo.setPower(0.5);
                 }
             }
 
@@ -85,11 +83,12 @@ public class Intake {
                 isServoOn = !isServoOn;
 
                 if (isServoOn) {
-                    intakeLeftServo.setDirection(Servo.Direction.REVERSE);
-                    intakeRightServo.setDirection(Servo.Direction.FORWARD);
+                    intakeLeftServo.setPower(-1.0);
+                    intakeRightServo.setPower(-1.0);
+
                 } else {
-                    intakeLeftServo.setPosition(0.0);
-                    intakeRightServo.setPosition(0.0);
+                    intakeLeftServo.setPower(0.5);
+                    intakeRightServo.setPower(0.5);
                 }
             }
 
